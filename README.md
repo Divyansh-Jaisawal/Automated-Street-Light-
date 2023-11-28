@@ -10,9 +10,13 @@ The Automated Street Light Control System is designed to intelligently manage an
 # Key Components:
 
 Microcontroller (e.g., Arduino, Raspberry Pi): The brain of the system that processes input data and controls the street lights.
+
 Light Sensors (LDR - Light Dependent Resistor): Measures ambient light levels to determine whether street lights should be turned on or off.
+
 Motion Sensors (Optional): Detects movement in the vicinity and can be used to brighten the lights when motion is detected.
+
 Relays: Control the power supply to the street lights, enabling them to be turned on or off.
+
 LED Street Lights: Energy-efficient light sources that can be controlled by the system.
 
 # System Operation:
