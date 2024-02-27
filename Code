@@ -1,0 +1,36 @@
+// Define the pin connections
+const int lightSensorPin = A0;  // Light sensor pin connected to analog pin A0
+const int relayPin = 8;          // Relay control pin connected to digital pin 8
+
+// Define the threshold value for light level
+const int lightThreshold = 500;  // Adjust this value according to your ambient light conditions
+
+void setup() {
+  // Initialize the relay pin as an output
+  pinMode(relayPin, OUTPUT);
+  // Initialize serial communication for debugging
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Read the light sensor value
+  int lightLevel = analogRead(lightSensorPin);
+
+  // Print the light level for debugging
+  Serial.print("Light Level: ");
+  Serial.println(lightLevel);
+
+  // Check if it's dark (light level is below the threshold)
+  if (lightLevel < lightThreshold) {
+    // If it's dark, turn on the street light
+    digitalWrite(relayPin, HIGH);
+    Serial.println("Street Light ON");
+  } else {
+    // If it's bright, turn off the street light
+    digitalWrite(relayPin, LOW);
+    Serial.println("Street Light OFF");
+  }
+
+  // Delay for stability and to reduce CPU load
+  delay(1000); // Adjust this delay according to your needs
+}
